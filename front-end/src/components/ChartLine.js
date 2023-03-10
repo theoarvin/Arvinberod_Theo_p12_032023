@@ -10,6 +10,7 @@ function ChartLine({ sessions }) {
   const fridaySession = sessions ? sessions[4].sessionLength : 0;
   const saturdaySession = sessions ? sessions[5].sessionLength : 0;
   const sundaySession = sessions ? sessions[6].sessionLength : 0;
+
   const data = [
     {
       value: mondaySession,
