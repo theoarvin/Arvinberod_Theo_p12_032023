@@ -13,22 +13,14 @@ import PropTypes from "prop-types";
 function DailyActivity({ userActivity }) {
   const activityData = userActivity?.sessions;
 
+  /**
+   * function to display the days of the week in number
+   * @param {*} tickItem
+   * @returns
+   */
   const formatXAxis = (tickItem) => {
     return tickItem + 1;
   };
-
-  const formatedData = () => {
-    if (activityData) {
-      const arrayData = activityData;
-      for (let data of arrayData) {
-        const datatFormated = data.calories / 10;
-        const objectData = { dataFormated: datatFormated };
-        Object.assign(data, objectData);
-        console.log(data);
-      }
-    }
-  };
-  formatedData();
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -59,7 +51,11 @@ function DailyActivity({ userActivity }) {
       <div className="dailyActivity--chartBlock">
         <ResponsiveContainer width="90%" height={230}>
           <BarChart maxBarSize={1} data={activityData}>
-            <CartesianGrid strokeDasharray="2" vertical={false} />
+            <CartesianGrid
+              strokeDasharray="2"
+              style={{ width: "80%" }}
+              vertical={false}
+            />
             <XAxis
               axisLine={false}
               dot={false}
@@ -109,4 +105,7 @@ function DailyActivity({ userActivity }) {
   );
 }
 
+DailyActivity.propTypes = {
+  userActivity: PropTypes.object,
+};
 export default DailyActivity;

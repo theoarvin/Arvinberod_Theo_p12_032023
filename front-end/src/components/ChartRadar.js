@@ -1,5 +1,11 @@
 import React from "react";
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
+import {
+  PolarAngleAxis,
+  PolarGrid,
+  Radar,
+  RadarChart,
+  ResponsiveContainer,
+} from "recharts";
 import PropTypes from "prop-types";
 
 function ChartRadar({ performance }) {
@@ -10,6 +16,10 @@ function ChartRadar({ performance }) {
   const speed = performance ? performance[4].value : 0;
   const intensity = performance ? performance[5].value : 0;
 
+  /**
+   * Data for chartRadar
+   * @type {array}
+   */
   const newData = [
     {
       subject: "Intensité",
@@ -37,22 +47,23 @@ function ChartRadar({ performance }) {
     },
   ];
 
-  RadarChart.propTypes = {
-    data: PropTypes.array.isRequired,
-  };
-
   return (
     <div className="chart chartRadar">
-      <RadarChart outerRadius={90} width={260} height={260} data={newData}>
-        <PolarGrid gridType="polygon" radialLines={false} />
-        <PolarAngleAxis
-          dataKey="subject"
-          tick={{ fill: "white", fontSize: 12 }}
-        />
-        <Radar dataKey="A" fill="#FF0101" fillOpacity={0.6} />
-      </RadarChart>
+      <ResponsiveContainer width="100%" height={260}>
+        <RadarChart outerRadius={70} data={newData}>
+          <PolarGrid gridType="polygon" radialLines={false} />
+          <PolarAngleAxis
+            dataKey="subject"
+            tick={{ fill: "white", fontSize: 12 }}
+          />
+          <Radar dataKey="A" fill="#FF0101" fillOpacity={0.6} />
+        </RadarChart>
+      </ResponsiveContainer>
     </div>
   );
 }
 
+ChartRadar.propTypes = {
+  performance: PropTypes.array,
+};
 export default ChartRadar;

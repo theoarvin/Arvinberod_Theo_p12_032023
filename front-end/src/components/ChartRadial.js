@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie, PieChart } from "recharts";
+import { Pie, PieChart, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
 function ChartRadial({ score }) {
@@ -18,25 +18,28 @@ function ChartRadial({ score }) {
 
   return (
     <div className="chart">
-      <PieChart width={260} height={260}>
-        <text
-          className="chart--title"
-          x={40}
-          y={30}
-          textAnchor="middle"
-          dominantBaseline="middle"
-        >
-          score
-        </text>
-        <Pie
-          startAngle={90}
-          endAngle={450}
-          data={dataChart}
-          dataKey="value"
-          outerRadius={70}
-          innerRadius={60}
-        />
-      </PieChart>
+      <ResponsiveContainer width="100%" height={260}>
+        <PieChart>
+          <text
+            className="chart--title"
+            x={40}
+            y={30}
+            textAnchor="middle"
+            dominantBaseline="middle"
+          >
+            score
+          </text>
+          <Pie
+            startAngle={90}
+            endAngle={450}
+            data={dataChart}
+            dataKey="value"
+            outerRadius={70}
+            innerRadius={60}
+          />
+        </PieChart>
+      </ResponsiveContainer>
+
       <p className="chart--text">
         <strong>{result}%</strong>
         <br />
@@ -48,4 +51,7 @@ function ChartRadial({ score }) {
   );
 }
 
+ChartRadial.propTypes = {
+  score: PropTypes.number,
+};
 export default ChartRadial;

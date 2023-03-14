@@ -7,20 +7,24 @@ import mockApi from "./mock/mockApi.json";
 const App = () => {
   const [data, setData] = useState([]);
 
-  //function to get data from api
+  /**
+   * function to get data from api
+   */
   const getData = async () => {
     const dataFetch = await getDataUser();
     setData(dataFetch);
   };
 
-  //function to get data from mock api
+  /**
+   * function to get data from mock api
+   */
   const getMockData = async () => {
     setData(mockApi);
   };
 
   useEffect(() => {
-    getData();
-    //getMockData();
+    //getData();
+    getMockData();
   }, []);
 
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function VerticalButton({ imageSource, path, alternateText }) {
   return (
@@ -11,4 +12,9 @@ function VerticalButton({ imageSource, path, alternateText }) {
   );
 }
 
+VerticalButton.propTypes = {
+  imageSource: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  alternateText: PropTypes.string.isRequired,
+};
 export default VerticalButton;

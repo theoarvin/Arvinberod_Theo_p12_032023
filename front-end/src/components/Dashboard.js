@@ -23,22 +23,6 @@ function Dashboard() {
   const performance = dataContext[3]?.performance.data.data;
   const sessions = dataContext[2]?.average.data.sessions;
 
-  DailyActivity.propTypes = {
-    userActivity: PropTypes.object,
-  };
-  ChartLine.propTypes = {
-    sessions: PropTypes.array,
-  };
-  ChartRadar.propTypes = {
-    performance: PropTypes.array,
-  };
-  ChartRadial.propTypes = {
-    score: PropTypes.number,
-  };
-  Info.propTypes = {
-    userInfo: PropTypes.number,
-  };
-
   return (
     <div className="dashboard">
       <div className="userName--block">
