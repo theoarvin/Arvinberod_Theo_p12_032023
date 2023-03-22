@@ -2,15 +2,15 @@
 
 # Required
 
-Utilisez le package D3 ou Recharts pour créer des graphiques
+Use D3 or Recharts package to make charts
 
-Effectuez des appels API en dehors des composants React, à l'intérieur d'un service .
+Make api calls outside React components, inside a service.
 
-Ajouter une classe de modélisation de données pour formater les données récupérées
+Add a data modeling class to format retrieved data
 
-Intégrez PropTypes et utilisez-le sur les composants qui ont besoin d'accessoires
+Integrate PropTypes and use it on components who needs props
 
-Faites un fichier Readme détaillé et en anglais uniquement
+Make a detailled and english only Readme
 
 # Installation and launch
 
