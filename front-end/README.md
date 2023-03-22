@@ -4,9 +4,9 @@
 
 ### Back-end
 
- Go to the -> backend repository <- and follow installation steps
+ Go to the -><a href="https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard" name="general-info">backend repository</a><- and follow installation steps
 
- Get to the root of the backend folder, then execute yarn dev to launch node server on port 3000
+ Get to the root of the backend folder, then execute npm dev to launch node server on port 3000
 
 ### Front-end
 
@@ -14,7 +14,7 @@
 
  npm install to install project dependencies
 
- ​Go to the folder projet12 with visual ,open the console and type `npm start` it will as you if you want to lunch the serveur on port 3001 , press Y
+ type `npm start` it will as you if you want to lunch the serveur on port 3001 , press Y
 ​
 
 
