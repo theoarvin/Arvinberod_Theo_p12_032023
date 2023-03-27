@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import { screen } from '@testing-library/react';
-import { formatedData } from "./Info";
-import Info from './Info';
+import { formatedData } from "../components/Info";
+import Info from '../components/Info';
 import React from 'react';
 import imgLipides from "../assets/img/imgLipides.svg";
 

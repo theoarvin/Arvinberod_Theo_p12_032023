@@ -3,6 +3,7 @@ import { Pie, PieChart, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
 function ChartRadial({ score }) {
+  
   const data = score;
   const number = 1;
   const value = number - data;
@@ -11,7 +12,7 @@ function ChartRadial({ score }) {
     { id: "1", name: "L1", value: data, fill: "#E60000" },
     { id: "2", name: "L2", value: value, fill: "#fff" },
   ];
-
+  
   Pie.propTypes = {
     data: PropTypes.array.isRequired,
   };

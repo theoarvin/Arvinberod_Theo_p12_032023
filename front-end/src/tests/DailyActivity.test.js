@@ -1,6 +1,6 @@
-import { formatXAxis } from "./DailyActivity";
-import DailyActivity from "./DailyActivity";
-import { render } from '@testing-library/react'
+import { formatXAxis,CustomTooltip } from "../components/DailyActivity";
+import DailyActivity from "../components/DailyActivity";
+import { fireEvent, getByTestId, render } from '@testing-library/react'
 import { screen } from '@testing-library/react';
 import React from 'react';
 
@@ -52,5 +52,6 @@ it('Should render the component DaylyActivity', () => {
   }
 
   render(<DailyActivity userActivity={userActivity}/>)
-
+  const title = screen.getByText('Activité quotidienne')
+  expect(title).toBeDefined()
 })

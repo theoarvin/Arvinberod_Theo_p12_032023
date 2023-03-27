@@ -10,13 +10,29 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
-export /**
+ /**
 * function to display the days of the week in number
 * @param {number} tickItem index of array days (0 - 6)
 * @returns number of days of the week (1 - 7)
 */
-const formatXAxis = (tickItem) => {
+export const formatXAxis = (tickItem) => {
  return tickItem + 1;
+};
+
+/**
+   * function to custom the tooltip
+   * @returns tooltip for barChart
+   */
+export const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{`${payload[1].value}`}Kg</p>
+        <p className="label">{`${payload[0].value}`}Kcal</p>
+      </div>
+    );
+  }
+  return null;
 };
 
 function DailyActivity({ userActivity }) {
@@ -24,21 +40,7 @@ function DailyActivity({ userActivity }) {
   
   
   
-   /**
-   * function to custom the tooltip
-   * @returns tooltip for barChart
-   */
-  const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="custom-tooltip">
-          <p className="label">{`${payload[1].value}`}Kg</p>
-          <p className="label">{`${payload[0].value}`}Kcal</p>
-        </div>
-      );
-    }
-    return null;
-  };
+   
   
   BarChart.propTypes = {
     data: PropTypes.array,
@@ -49,11 +51,11 @@ function DailyActivity({ userActivity }) {
       <div className="header">
         <p className="header--title">Activité quotidienne</p>
         <div className="header--legende">
-          <p className="header--legende__weight">Poids (kg)</p>
+          <p className="header--legende__weight">Poids(kg)</p>
           <p className="header--legende__calories">Calories brûlées (kCal)</p>
         </div>
       </div>
-      <div className="dailyActivity--chartBlock">
+      <div className="dailyActivity--chartBlock" data-testid="custom-element">
         <ResponsiveContainer width="100%"  height={230}>
           <BarChart
             maxBarSize={1}

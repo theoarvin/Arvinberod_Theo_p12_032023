@@ -38,7 +38,8 @@ function ChartLine({ sessions }) {
       value: sundaySession,
     },
   ];
-
+  
+  console.log(data);
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -56,8 +57,8 @@ function ChartLine({ sessions }) {
   return (
     <div className="chart chartLine">
       <p className="chartline--title">Durée moyenne des sessions</p>
-      <ResponsiveContainer width="100%" height={180}>
-        <LineChart data={data}>
+      <ResponsiveContainer width="100%" height={180} >
+        <LineChart margin={{ bottom: 60}} data={data}>
           <XAxis
             axisLine={false}
             tickLine={false}

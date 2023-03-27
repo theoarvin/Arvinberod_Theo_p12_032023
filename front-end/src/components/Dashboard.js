@@ -22,7 +22,7 @@ function Dashboard() {
   const score = dataContext[0]?.user.data.score;
   const performance = dataContext[3]?.performance.data.data;
   const sessions = dataContext[2]?.average.data.sessions;
-  console.log('userActivity',userActivity);
+  
   return (
     <div className="dashboard">
       <div className="userName--block">
