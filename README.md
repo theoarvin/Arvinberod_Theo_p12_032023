@@ -24,12 +24,6 @@
 
  * Get to the root of the frontend folder and launch the following commands :
 
- #### yarn
- * yarn install to install project dependencies
-
- * type `npm start` it will as you if you want to lunch the serveur on port 3001 , press Y
- 
-#### npm 
  * npm install to install project dependencies
 
  * type `npm start` it will as you if you want to lunch the serveur on port 3001 , press Y
