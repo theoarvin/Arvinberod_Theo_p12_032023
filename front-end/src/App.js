@@ -25,8 +25,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    getData();
-    //getMockData();
+    //getData();
+    getMockData();
   }, []);
 
   return (
